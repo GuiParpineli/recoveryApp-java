@@ -1,16 +1,15 @@
-package com.quarkbyte.recoveryappjava.model;
+package com.quarkbyte.recoveryappjava.Case;
 
 import com.quarkbyte.recoveryappjava.model.enums.csj.ExternalStatus;
 import com.quarkbyte.recoveryappjava.model.enums.csj.InternalStatus;
 import com.quarkbyte.recoveryappjava.model.enums.csj.ResolutionType;
 import com.quarkbyte.recoveryappjava.model.enums.csj.StepCSJ;
 import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Entity
-abstract class CaseCSJ {
+public abstract class CaseCSJ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

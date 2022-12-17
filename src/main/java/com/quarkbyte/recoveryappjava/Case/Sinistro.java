@@ -1,6 +1,6 @@
-package com.quarkbyte.recoveryappjava.model;
+package com.quarkbyte.recoveryappjava.Case;
 
-import com.quarkbyte.recoveryapp_api.model.enums.csjSINISTRO.SinistroType;
+import com.quarkbyte.recoveryappjava.model.enums.csjSINISTRO.SinistroType;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

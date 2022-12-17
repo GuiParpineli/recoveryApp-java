@@ -1,5 +1,6 @@
 package com.quarkbyte.recoveryappjava.model;
 
+import com.quarkbyte.recoveryappjava.Case.CaseCSJ;
 import com.quarkbyte.recoveryappjava.model.enums.PlanStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
