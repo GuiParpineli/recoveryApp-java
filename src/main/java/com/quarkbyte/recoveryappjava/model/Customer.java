@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Setter
@@ -18,7 +19,7 @@ import java.util.Date;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
     private String name;
     private String cpf;
     private String phone;
