@@ -1,4 +1,4 @@
-package com.quarkbyte.recoveryappjava.Case;
+package com.quarkbyte.recoveryappjava.model.Case;
 
 import com.quarkbyte.recoveryappjava.model.enums.csjSINISTRO.SinistroType;
 import jakarta.persistence.Entity;

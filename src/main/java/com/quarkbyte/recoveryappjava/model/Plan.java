@@ -1,6 +1,6 @@
 package com.quarkbyte.recoveryappjava.model;
 
-import com.quarkbyte.recoveryappjava.Case.CaseCSJ;
+import com.quarkbyte.recoveryappjava.model.Case.CaseCSJ;
 import com.quarkbyte.recoveryappjava.model.enums.PlanStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -41,6 +41,5 @@ public class Plan {
     private CaseCSJ caseCSJ;
     @DateTimeFormat(pattern = "dd-mm-yyyy")
     private String createDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.YYYY HH:mm:ss"));
-
 
 }

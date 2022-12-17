@@ -1,4 +1,4 @@
-package com.quarkbyte.recoveryappjava.Case;
+package com.quarkbyte.recoveryappjava.model.Case;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -9,5 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Misappropriation extends CaseCSJ{
+public class TechnicalSupport extends CaseCSJ {
+    private Double repairValue;
+    private Boolean status;
 }
