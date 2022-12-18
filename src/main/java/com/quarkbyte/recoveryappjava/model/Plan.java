@@ -20,7 +20,7 @@ import java.util.UUID;
 public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
     private Double value;
     @Enumerated(EnumType.STRING)
     private PlanStatus planStatus;
@@ -40,7 +40,7 @@ public class Plan {
     @JoinColumn(name= "id_bondsman")
     private Bondsman bondsman;
     @ManyToOne
-    @JoinColumn(name="id_customer")
+    @JoinColumn(name="id_caseCSJ")
     private CaseCSJ caseCSJ;
     @DateTimeFormat(pattern = "dd-mm-yyyy")
     private String createDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.YYYY HH:mm:ss"));
