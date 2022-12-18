@@ -21,12 +21,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
     private String name;
+    private String lastName;
     private String cpf;
     private String phone;
     private String email;
     private Date date;
     private Date birthDay;
     private Gender gender;
-    private String nacionality;
+    private String nationality;
 
 }

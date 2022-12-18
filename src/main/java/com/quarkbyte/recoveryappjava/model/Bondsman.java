@@ -3,13 +3,17 @@ package com.quarkbyte.recoveryappjava.model;
 import com.quarkbyte.recoveryappjava.model.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Getter
+@Setter
 public class Bondsman {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

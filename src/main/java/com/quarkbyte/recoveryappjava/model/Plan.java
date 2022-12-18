@@ -3,9 +3,7 @@ package com.quarkbyte.recoveryappjava.model;
 import com.quarkbyte.recoveryappjava.model.Case.CaseCSJ;
 import com.quarkbyte.recoveryappjava.model.enums.PlanStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -17,6 +15,8 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 public class Plan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,9 @@ public class Plan {
             inverseJoinColumns = @JoinColumn(name = "id_products")
     )
     private List<Product> productList;
+    @ManyToOne
+    @JoinColumn(name= "id_customer")
+    private Customer customer;
     @ManyToOne
     @JoinColumn(name= "id_bondsman")
     private Bondsman bondsman;
