@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -18,8 +19,8 @@ import java.util.Date;
 @NoArgsConstructor
 public abstract class CaseCSJ {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"));
     @Enumerated(EnumType.STRING)
     private StepCSJ stepCSJ;

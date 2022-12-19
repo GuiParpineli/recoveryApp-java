@@ -19,8 +19,8 @@ import java.util.UUID;
 @Setter
 public class Plan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private Double value;
     @Enumerated(EnumType.STRING)
     private PlanStatus planStatus;
