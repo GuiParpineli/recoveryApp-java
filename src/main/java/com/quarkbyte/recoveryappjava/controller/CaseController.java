@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "case", produces = MediaType.APPLICATION_JSON_VALUE)
-public class SinistroController{
+public class CaseController {
     private final SinsitroService service;
 
     @Autowired
-    public SinistroController(SinsitroService service) {
+    public CaseController(SinsitroService service) {
         this.service = service;
     }
 

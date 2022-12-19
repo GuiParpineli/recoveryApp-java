@@ -10,7 +10,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -26,7 +25,7 @@ public abstract class CaseCSJ {
     private StepCSJ stepCSJ;
     private Date resolutionDate;
     private Double value;
-    private Double covarageValue;
+    private Double coverageValue;
     @Enumerated(EnumType.STRING)
     private ResolutionType resolutionType;
     private Boolean recidivistCustomer;
