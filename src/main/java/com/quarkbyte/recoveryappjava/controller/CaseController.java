@@ -1,5 +1,6 @@
 package com.quarkbyte.recoveryappjava.controller;
 
+import com.quarkbyte.recoveryappjava.exceptions.SaveErrorException;
 import com.quarkbyte.recoveryappjava.model.Case.Sinistro;
 import com.quarkbyte.recoveryappjava.service.SinsitroService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,7 @@ public class CaseController {
     }
 
     @PostMapping("/sinistro")
-    public ResponseEntity<?> save(@RequestBody Sinistro sinistro) {
-        service.saveSinistro(sinistro);
-        return null;
+    public ResponseEntity<?> save(@RequestBody Sinistro sinistro) throws SaveErrorException {
+        return service.save(sinistro);
     }
 }

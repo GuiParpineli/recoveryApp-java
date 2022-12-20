@@ -23,7 +23,11 @@ public class DataLoader implements ApplicationRunner {
     private final SinistroRepository sinistroRepository;
     private final UserRepository userRepository;
 
-    public DataLoader(CustomerRepository repository, BondsmanRepository bondsmanRepository, AddressRepository addressRepository, ProductRepository productRepository, PlanRepository planRepository, SinistroRepository sinistroRepository, UserRepository userRepository) {
+
+    public DataLoader(CustomerRepository repository, BondsmanRepository bondsmanRepository,
+                      AddressRepository addressRepository, ProductRepository productRepository,
+                      PlanRepository planRepository, SinistroRepository sinistroRepository,
+                      UserRepository userRepository) {
         this.customerRepository = repository;
         this.bondsmanRepository = bondsmanRepository;
         this.addressRepository = addressRepository;
