@@ -1,5 +1,5 @@
 package com.quarkbyte.recoveryappjava.model.enums.csj;
 
 public enum StepCSJ {
-    TESTE
+    ACORDO, EXTRAJUDICIAL, LITIGIOSO, PROCEDIMENTO_COMUM_SINISTRO
 }

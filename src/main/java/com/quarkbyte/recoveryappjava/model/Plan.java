@@ -1,7 +1,6 @@
 package com.quarkbyte.recoveryappjava.model;
 
 import com.quarkbyte.recoveryappjava.model.Case.CaseCSJ;
-import com.quarkbyte.recoveryappjava.model.enums.PlanStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,8 +21,10 @@ public class Plan {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private Double value;
-    @Enumerated(EnumType.STRING)
-    private PlanStatus planStatus;
+    private Boolean planStatus;
+    @ManyToOne
+    @JoinColumn(name = "analist_id")
+    private User analist;
     private LocalDateTime initialDate;
     private LocalDateTime finalDate;
     @ManyToMany
@@ -34,15 +35,16 @@ public class Plan {
     )
     private List<Product> productList;
     @ManyToOne
-    @JoinColumn(name= "id_customer")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
     @ManyToOne
-    @JoinColumn(name= "id_bondsman")
+    @JoinColumn(name = "bondsman_id")
     private Bondsman bondsman;
     @ManyToOne
-    @JoinColumn(name="id_caseCSJ")
+    @JoinColumn(name = "caseCSJ_id")
     private CaseCSJ caseCSJ;
     @DateTimeFormat(pattern = "dd-mm-yyyy")
-    private String createDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.YYYY HH:mm:ss"));
+    private String createDate = LocalDateTime.now()
+            .format(DateTimeFormatter.ofPattern("dd.MM.YYYY HH:mm:ss"));
 
 }

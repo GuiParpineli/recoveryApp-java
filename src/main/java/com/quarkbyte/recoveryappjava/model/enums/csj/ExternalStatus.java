@@ -1,5 +1,5 @@
 package com.quarkbyte.recoveryappjava.model.enums.csj;
 
 public enum ExternalStatus {
-    TESTE
+    EM_ABERTO, PERDIDO, RECUPERADO
 }

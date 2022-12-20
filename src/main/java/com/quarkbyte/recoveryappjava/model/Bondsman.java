@@ -17,7 +17,6 @@ public class Bondsman {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-
     private String name;
     private String lastName;
     private String cpf;
