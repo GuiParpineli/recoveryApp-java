@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface SinistroRepository extends JpaRepository<Sinistro, Long> {
+public interface SinistroRepository extends JpaRepository<Sinistro, UUID> {
 }

@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -25,7 +26,7 @@ public class Sinistro extends CaseCSJ {
     private Double coverageValue;
     private Boolean payment;
 
-    public Sinistro(Long id, Date date, StepCSJ stepCSJ, Date resolutionDate, Double value,
+    public Sinistro(UUID id, Date date, StepCSJ stepCSJ, Date resolutionDate, Double value,
                     Double coverageValue, ResolutionType resolutionType, Boolean recidivistCustomer,
                     InternalStatus internalStatus, ExternalStatus externalStatus, Date initalTime,
                     SinistroType type, Boolean imeiStatus, Boolean boStatus, Boolean videoStatus, Date sinistroDate,

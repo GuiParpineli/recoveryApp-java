@@ -16,8 +16,8 @@ import java.util.UUID;
 @Setter
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private String street;
     private String city;
     private String state;

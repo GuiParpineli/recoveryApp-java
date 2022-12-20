@@ -20,8 +20,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public abstract class CaseCSJ {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     @DateTimeFormat(pattern = "dd-mm-yyyy")
     private  Date date ;
     @Enumerated(EnumType.STRING)

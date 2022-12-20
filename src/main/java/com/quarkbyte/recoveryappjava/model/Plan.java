@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -17,13 +18,13 @@ import java.util.List;
 @Setter
 public class Plan {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
     private Double value;
     private Boolean planStatus;
     @ManyToOne
-    @JoinColumn(name = "analist_id")
-    private UserApp analist;
+    @JoinColumn(name = "analyst_id")
+    private UserApp analyst;
     private LocalDateTime initialDate;
     private LocalDateTime finalDate;
     @ManyToMany
@@ -44,6 +45,6 @@ public class Plan {
     private CaseCSJ caseCSJ;
     @DateTimeFormat(pattern = "dd-mm-yyyy")
     private String createDate = LocalDateTime.now()
-            .format(DateTimeFormatter.ofPattern("dd.MM.YYYY HH:mm:ss"));
+            .format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"));
 
 }

@@ -75,7 +75,7 @@ public class DataLoader implements ApplicationRunner {
                         .lastName("Wilson")
                         .cpf("553.123.134-22")
                         .email("pw@gmail.com")
-                        .address(addressRepository.findById(1L).get())
+                        .address(addressRepository.findAll().get(0))
                         .birthDay(new Date())
                         .gender(Gender.OUTRO)
                         .nationality("Brasil")
@@ -90,7 +90,7 @@ public class DataLoader implements ApplicationRunner {
                         .lastName("Wilson")
                         .cpf("553.123.134-22")
                         .phone("1231-12312")
-                        .address(addressRepository.findById(1L).get())
+                        .address(addressRepository.findAll().get(0))
                         .email("pw@gmail.com")
                         .birthDay(new Date())
                         .gender(Gender.OUTRO)
@@ -101,7 +101,7 @@ public class DataLoader implements ApplicationRunner {
         //save plantypes
         sinistroRepository.save(
                 new Sinistro(
-                        1L, new Date(), StepCSJ.ACORDO, new Date(),
+                        null, new Date(), StepCSJ.ACORDO, new Date(),
                         20., 20., ResolutionType.CHARGEBACK_PAGO, false,
                         InternalStatus.ACOMPANHAR, ExternalStatus.EM_ABERTO,
                         new Date(), SinistroType.FURTO_QUALIFICADO,
@@ -112,7 +112,7 @@ public class DataLoader implements ApplicationRunner {
 
         //save users
         userRepository.save(
-                new UserApp(0L, "Paulera")
+                new UserApp(null, "Paulera")
         );
 
         //save plan
@@ -120,12 +120,12 @@ public class DataLoader implements ApplicationRunner {
                 Plan.builder()
                         .value(5000.00)
                         .planStatus(true)
-                        .analist(userRepository.findAll().get(0))
+                        .analyst(userRepository.findAll().get(0))
                         .initialDate(LocalDateTime.now())
                         .finalDate(LocalDateTime.now())
                         .customer(customerRepository.findAll().get(0))
-                        .bondsman(bondsmanRepository.findById(1L).get())
-                        .caseCSJ(sinistroRepository.findById(1L).get())
+                        .bondsman(bondsmanRepository.findAll().get(0))
+                        .caseCSJ(sinistroRepository.findAll().get(0))
                         .build()
         );
 
