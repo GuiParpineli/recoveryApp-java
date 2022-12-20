@@ -8,7 +8,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -18,13 +17,13 @@ import java.util.UUID;
 @Setter
 public class Plan {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Double value;
     private Boolean planStatus;
     @ManyToOne
     @JoinColumn(name = "analist_id")
-    private User analist;
+    private UserApp analist;
     private LocalDateTime initialDate;
     private LocalDateTime finalDate;
     @ManyToMany

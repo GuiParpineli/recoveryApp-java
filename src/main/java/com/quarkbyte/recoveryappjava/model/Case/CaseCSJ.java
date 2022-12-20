@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,9 +20,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public abstract class CaseCSJ {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-    private String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss"));
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @DateTimeFormat(pattern = "dd-mm-yyyy")
+    private  Date date ;
     @Enumerated(EnumType.STRING)
     private StepCSJ stepCSJ;
     private Date resolutionDate;

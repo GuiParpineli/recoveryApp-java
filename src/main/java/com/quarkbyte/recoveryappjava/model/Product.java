@@ -17,8 +17,8 @@ import java.util.UUID;
 @Setter
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private StatusProduct statusProduct;
     private String imei;

@@ -25,7 +25,7 @@ public class AddressService {
         return ResponseEntity.ok(saved);
     }
 
-    public ResponseEntity<?> getById(UUID id) throws ResourceNotFoundException {
+    public ResponseEntity<?> getById(Long id) throws ResourceNotFoundException {
         Address saved = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("None address founded"));
         return ResponseEntity.ok(saved);
@@ -51,7 +51,7 @@ public class AddressService {
         return ResponseEntity.ok(saved);
     }
 
-    public ResponseEntity<?> delete(UUID id) throws ResourceNotFoundException {
+    public ResponseEntity<?> delete(Long id) throws ResourceNotFoundException {
         Address saved = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("None address founded"));
         repository.deleteById(saved.getId());

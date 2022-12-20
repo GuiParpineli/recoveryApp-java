@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface MisappropriationRepository extends JpaRepository<Misappropriation, UUID> {
+public interface MisappropriationRepository extends JpaRepository<Misappropriation, Long> {
 }

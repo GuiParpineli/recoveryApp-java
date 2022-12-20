@@ -7,4 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface BondsmanRepository extends JpaRepository<Bondsman, UUID> { }
+public interface BondsmanRepository extends JpaRepository<Bondsman, Long> { }

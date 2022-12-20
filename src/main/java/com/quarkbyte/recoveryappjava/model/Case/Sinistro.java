@@ -10,28 +10,39 @@ import java.util.Date;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Getter
 @Setter
 public class Sinistro extends CaseCSJ {
-    @NotNull
     private Date initalTime;
-    @NotNull
     private SinistroType type;
     private Boolean imeiStatus;
     private Boolean boStatus;
     private Boolean videoStatus;
-    @NotNull
     private Date sinistroDate;
-    @NotNull
     private Float franchise;
-    @NotNull
     private Double franchiseTotalValue;
-    @NotNull
     private Double descontValue;
-    @NotNull
     private Double coverageValue;
     private Boolean payment;
+
+    public Sinistro(Long id, Date date, StepCSJ stepCSJ, Date resolutionDate, Double value,
+                    Double coverageValue, ResolutionType resolutionType, Boolean recidivistCustomer,
+                    InternalStatus internalStatus, ExternalStatus externalStatus, Date initalTime,
+                    SinistroType type, Boolean imeiStatus, Boolean boStatus, Boolean videoStatus, Date sinistroDate,
+                    Float franchise, Double franchiseTotalValue, Double descontValue, Double coverageValue1, Boolean payment) {
+        super(id, date, stepCSJ, resolutionDate, value, coverageValue, resolutionType, recidivistCustomer,
+                internalStatus, externalStatus);
+        this.initalTime = initalTime;
+        this.type = type;
+        this.imeiStatus = imeiStatus;
+        this.boStatus = boStatus;
+        this.videoStatus = videoStatus;
+        this.sinistroDate = sinistroDate;
+        this.franchise = franchise;
+        this.franchiseTotalValue = franchiseTotalValue;
+        this.descontValue = descontValue;
+        this.coverageValue = coverageValue1;
+        this.payment = payment;
+    }
 
 }

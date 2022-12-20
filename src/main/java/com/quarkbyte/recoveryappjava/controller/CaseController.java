@@ -17,6 +17,12 @@ public class CaseController {
         this.service = service;
     }
 
+
+    @GetMapping("/sinistro")
+    public ResponseEntity<?> getAll() {
+        return service.get();
+    }
+
     @PostMapping("/sinistro")
     public ResponseEntity<?> save(@RequestBody Sinistro sinistro) {
         service.saveSinistro(sinistro);
