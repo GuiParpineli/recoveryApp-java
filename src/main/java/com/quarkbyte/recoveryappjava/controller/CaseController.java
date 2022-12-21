@@ -18,7 +18,6 @@ public class CaseController {
         this.service = service;
     }
 
-
     @GetMapping("/sinistro")
     public ResponseEntity<?> getAll() {
         return service.get();

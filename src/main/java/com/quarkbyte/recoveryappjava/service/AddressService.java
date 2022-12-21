@@ -20,8 +20,9 @@ public class AddressService {
         this.repository = repository;
     }
 
-    public ResponseEntity<?> get() {
+    public ResponseEntity<?> get() throws ResourceNotFoundException {
         List<Address> saved = repository.findAll();
+        if (saved.isEmpty()) throw new ResourceNotFoundException("None Address founded");
         return ResponseEntity.ok(saved);
     }
 
@@ -55,7 +56,7 @@ public class AddressService {
         Address saved = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("None address founded"));
         repository.deleteById(saved.getId());
-        return ResponseEntity.ok("Addres" + saved + " deleted sucessfully");
+        return ResponseEntity.ok("Address" + saved + " deleted successfully");
     }
 
 }
